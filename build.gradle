@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+ext {
+    SPRING_BOOT_VERSION='2.1.7.RELEASE'
+    SPRING_CLOUD_VERSION='2.2.0.RELEASE'
+    KAFKA_SPRING='2.2.8.RELEASE'
+}
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.springframework.kafka:spring-kafka:$KAFKA_SPRING"
+    implementation "org.springframework.boot:spring-boot-starter-actuator:$SPRING_BOOT_VERSION"
+    implementation "org.springframework.cloud:spring-cloud-stream:$SPRING_CLOUD_VERSION"
+    implementation "org.springframework.boot:spring-boot-starter:$SPRING_BOOT_VERSION"
+    implementation "org.springframework.boot:spring-boot-starter-web:$SPRING_BOOT_VERSION"
+    implementation "org.springframework.cloud:spring-cloud-stream-binder-kafka:$SPRING_CLOUD_VERSION"
+
+    implementation "com.google.guava:guava:27.1-jre"
+
+    testCompile "junit:junit:4.12"
+    testCompile "org.springframework.boot:spring-boot-starter-test:$SPRING_BOOT_VERSION"
+    testCompile "org.springframework.kafka:spring-kafka-test:$KAFKA_SPRING"
+
+}
+
